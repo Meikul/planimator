@@ -1,0 +1,143 @@
+body{
+  background: #678;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+#pl-panel{
+  border-top: 1px solid #aaa;
+  position: fixed;
+  /*background: #333;*/
+  /*border: 1px solid #aaa;*/
+  width: 300px;
+  font-family: 'Roboto';
+  font-size: 14px;
+  padding: 0;
+  font-weight: 300;
+  color: #ddd;
+  border-radius: 2px;
+}
+
+.pl-panel-header{
+  font-size: 16px;
+}
+
+.pl-header{
+  position: relative;
+  padding: 12px;
+  height: auto;
+  width: 100%;
+  background: #333;
+  border: 1px solid #aaa;
+  border-top: none;
+}
+
+.pl-frame .pl-plus{
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.pl-open .pl-plus{
+  transform: rotate(45deg);
+}
+
+.pl-frame-window{
+  background: #333;
+  width: 295px;
+  height: auto;
+  max-height: 0;
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  transition: max-height 0.4s ease;
+  overflow: hidden;
+}
+
+.pl-open .pl-frame-window{
+  max-height: 200px;
+}
+
+.pl-open + .pl-frame .pl-header{
+  border-top: 1px solid #aaa;
+}
+
+.pl-prop-row{
+  position: relative;
+  height: 40px;
+  font-size: 12px;
+  font-weight: 100;
+  font-style: italic;
+  border-bottom: 1px solid #aaa;
+  /*padding: 12px;*/
+  white-space: nowrap;
+  text-align: left;
+  color: #aaa;
+}
+
+.pl-prop-row label{
+  position: absolute;
+  padding: 12px;
+}
+
+.pl-manipulators{
+  font-family: 'Roboto';
+  color: #aaa;
+  position: absolute;
+  top: 0;
+  right:0;
+  height: 100%;
+}
+
+.pl-slider{
+  position: absolute;
+  background: red;
+  width: 100px;
+  height: 16px;
+  background: #666;
+  margin: 12px;
+  right: 50px;
+  cursor: ew-resize;
+}
+
+
+.pl-slider-indicator{
+  position: absolute;
+  top: 0;
+  background: #888;
+  width: 50%;
+  height: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+#pl-panel input[type=number]::-webkit-inner-spin-button,
+#pl-panel input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.pl-manipulators input[type="number"]{
+  font-size: 12px;
+  font-weight: 200;
+  font-style: italic;
+  color: #aaa;
+  position: absolute;
+  background: #333;
+  border: 1px solid #aaa;
+  margin: 12px;
+  right: 0;
+  /*border-radius: 10em;*/
+  height: 16px;
+  width: 40px;
+}
