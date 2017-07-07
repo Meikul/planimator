@@ -6,44 +6,168 @@ body{
   box-sizing: border-box;
 }
 
+#pl-container{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
 #pl-panel{
   border-top: 1px solid #aaa;
-  position: fixed;
+  position: absolute;
+  top: 30px;
+  left: 30px;
   /*background: #333;*/
   /*border: 1px solid #aaa;*/
   width: 300px;
   font-family: 'Roboto';
   font-size: 14px;
   padding: 0;
-  font-weight: 300;
+  font-weight: 200;
   color: #ddd;
   border-radius: 2px;
 }
 
 .pl-panel-header{
   font-size: 16px;
+  cursor: pointer !important;
+}
+
+.pl-new-frame{
+  background: #444;
+  width: 90%;
+  margin: auto;
+  height: 30px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #aaa;
+  border-top: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pl-new-frame:hover{
+  background: #555;
 }
 
 .pl-header{
   position: relative;
   padding: 12px;
-  height: auto;
+  height: 45px;
   width: 100%;
   background: #333;
   border: 1px solid #aaa;
   border-top: none;
 }
 
-.pl-frame .pl-plus{
+.pl-header .pl-header-buttons{
+  height: 100%;
   position: absolute;
-  right: 12px;
+  right: 0;
+  top: 0;
+}
+
+.pl-header-buttons > *{
   cursor: pointer;
+}
+
+.pl-frame-title{
+  cursor: text;
+  width: 200px;
+  top: 12px;
+  left: 12px;
+  padding: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+/*.pl-frame-title:hover{
+  outline: 1px solid #aaa;
+}*/
+
+.pl-frame-title input{
+  background: #333;
+  border: 1px solid #aaa;
+  position: absolute;
+  color: #ddd;
+  font-weight: inherit;
+  font-size: inherit;
+  top: 12px;
+  left: 12px;
+  width: 200px;
+  opacity: 0;
+  font-family: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.pl-frame-title input:hover{
+  opacity: 0.3;
+}
+
+.pl-frame-title input:focus{
+  opacity: 1;
+}
+
+.pl-header-buttons .fa-plus{
+  position: absolute;
+  top: 16px;
+  right: 12px;
   transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
 
-.pl-open .pl-plus{
+.pl-open .pl-header-buttons .fa-plus{
   transform: rotate(45deg);
+}
+
+.pl-header-buttons .fa-bars{
+  position: absolute;
+  top: 15px;
+  right: 60px;
+  cursor: ns-resize;
+}
+
+.pl-radio input[type="radio"]{
+  display: none;
+}
+
+.pl-radio{
+  position: absolute;
+  top: 15px;
+  right: 34px;
+  /*border: 1px solid red;*/
+}
+
+.pl-radio input[type="radio"] ~ div{
+  height: 14px;
+  width: 14px;
+  background: #333;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.pl-radio input[type="radio"]:checked ~ div{
+  border-color: #0DFF92;
+}
+
+.pl-radio input[type="radio"] ~ div::before{
+  display: block;
+  content: '';
+  position: relative;
+  height: 6px;
+  width: 6px;
+  top: 3px;
+  left: 3px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.pl-radio input[type="radio"]:checked ~ div::before{
+  background: #0DFF92;
 }
 
 .pl-frame-window{
@@ -55,10 +179,6 @@ body{
   border-right: 1px solid #aaa;
   transition: max-height 0.4s ease;
   overflow: hidden;
-}
-
-.pl-open .pl-frame-window{
-  max-height: 200px;
 }
 
 .pl-open + .pl-frame .pl-header{
@@ -73,9 +193,12 @@ body{
   font-style: italic;
   border-bottom: 1px solid #aaa;
   /*padding: 12px;*/
-  white-space: nowrap;
   text-align: left;
   color: #aaa;
+}
+
+.pl-prop-row:last-of-type{
+  border-bottom: none;
 }
 
 .pl-prop-row label{
@@ -84,9 +207,9 @@ body{
 }
 
 .pl-manipulators{
+  position: absolute;
   font-family: 'Roboto';
   color: #aaa;
-  position: absolute;
   top: 0;
   right:0;
   height: 100%;

@@ -8,57 +8,99 @@
       <link rel="stylesheet" href="style.css">
     </head>
     <body>
-      <div id="pl-panel">
-        <div class="pl-header pl-panel-header">
-          Planimator
-        </div>
-        <div class="pl-frames-wrapper">
-          <div class="pl-frame">
-            <div class="pl-header">
-              Keyframe 1
-              <div class="fa fa-plus pl-plus"></div>
-            </div>
-            <div class="pl-frame-window">
-              <div class="pl-prop-row pl-new-prop">
-
-              </div>
-              <div class="pl-prop-row">
-                <label>Opacity</label>
-                <div class="pl-manipulators">
-                  <div class="pl-slider">
-                    <div class="pl-slider-indicator"></div>
-                  </div>
-                  <input type="number" min="0" max="1" step="0.1" />
+      <script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
+      <div id="pl-container">
+        <div id="pl-panel">
+          <div class="pl-header pl-panel-header">
+            Planimator
+          </div>
+          <div class="pl-frames-wrapper">
+            <div class="pl-frame">
+              <div class="pl-header">
+                <div class="pl-frame-title">
+                  Keyframe 1
+                  <input type="text" value="Keyframe 1"/>
+                </div>
+                <div class="pl-header-buttons">
+                  <div class="fa fa-bars"></div>
+                  <label class="pl-radio" title="active">
+                    <input type="radio" name="active" />
+                    <div></div>
+                  </label>
+                  <div class="fa fa-plus"></div>
                 </div>
               </div>
-              <div class="pl-prop-row">
-                <label>Not Opacity</label>
-                <div class="pl-manipulators">
-                  <div class="pl-slider">
-                    <div class="pl-slider-indicator"></div>
+              <div class="pl-frame-window">
+                <div class="pl-prop-row pl-new-prop">
+
+                </div>
+                <div class="pl-prop-row">
+                  <label>Opacity</label>
+                  <div class="pl-manipulators">
+                    <div class="pl-slider-group">
+                      <div class="pl-slider">
+                        <div class="pl-slider-indicator"></div>
+                      </div>
+                      <input type="number" min="0" max="1" step="0.1" />
+                    </div>
                   </div>
-                  <input type="number" min="0" max="1" step="0.1" />
+                </div>
+                <div class="pl-prop-row">
+                  <label>Not Opacity</label>
+                  <div class="pl-manipulators">
+                    <div class="pl-slider">
+                      <div class="pl-slider-indicator"></div>
+                    </div>
+                    <input type="number" min="0" max="1" step="0.1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pl-frame">
+              <div class="pl-header">
+                <div class="pl-frame-title">
+                  Keyframe 2
+                  <input type="text" value="Keyframe 2"/>
+                </div>
+                <div class="pl-header-buttons">
+                  <div class="fa fa-bars"></div>
+                  <label class="pl-radio" title="active">
+                    <input type="radio" name="active" />
+                    <div></div>
+                  </label>
+                  <div class="fa fa-plus"></div>
+                </div>
+              </div>
+              <div class="pl-frame-window">
+                <div class="pl-prop-row pl-new-prop">
+
+                </div>
+              </div>
+            </div>
+                <div class="pl-frame">
+              <div class="pl-header">
+                <div class="pl-frame-title">
+                  Keyframe 3
+                  <input type="text" value="Keyframe 3"/>
+                </div>
+                <div class="pl-header-buttons">
+                  <div class="fa fa-bars"></div>
+                  <label class="pl-radio" title="active">
+                    <input type="radio" name="active" />
+                    <div></div>
+                  </label>
+                  <div class="fa fa-plus"></div>
+                </div>
+              </div>
+              <div class="pl-frame-window">
+                <div class="pl-prop-row pl-new-prop">
+
                 </div>
               </div>
             </div>
           </div>
-          <div class="pl-frame">
-            <div class="pl-header">
-              Keyframe 2
-              <div class="fa fa-plus pl-plus"></div>
-            </div>
-            <div class="pl-frame-window">
-
-            </div>
-          </div>
-          <div class="pl-frame">
-            <div class="pl-header">
-              Keyframe 3
-              <div class="fa fa-plus pl-plus"></div>
-            </div>
-            <div class="pl-frame-window">
-
-            </div>
+          <div class="pl-new-frame">
+            New Frame <span class="fa fa-plus"></span>
           </div>
         </div>
       </div>
