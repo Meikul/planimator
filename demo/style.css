@@ -64,10 +64,18 @@ body{
   transition: all 0.2s ease;
 }
 
-.pl-frames-wrapper .is-pointer-down .pl-header{
-  /*width: 104%;*/
-  opacity: 0.4;
-  /*left: -2%;*/
+.pl-frame{
+  z-index: 20;
+}
+
+.pl-frame.is-pointer-down{
+  z-index: 21;
+}
+
+.pl-frame.is-pointer-down .pl-header{
+  width: 104%;
+  opacity: 0.7;
+  left: -2%;
 }
 
 .pl-header .pl-header-buttons{
