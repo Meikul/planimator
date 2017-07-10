@@ -57,9 +57,17 @@ body{
   padding: 12px;
   height: 45px;
   width: 100%;
+  left: 0;
   background: #333;
   border: 1px solid #aaa;
   border-top: none;
+  transition: all 0.2s ease;
+}
+
+.pl-frames-wrapper .is-pointer-down .pl-header{
+  /*width: 104%;*/
+  opacity: 0.4;
+  /*left: -2%;*/
 }
 
 .pl-header .pl-header-buttons{
